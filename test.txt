@@ -1,0 +1,10 @@
+<Group title="Collection Sources">
+    <CheckboxAgentSourcesInputGroup
+        items={Object.entries(sensorData).reduce((acc, [agent, sources]) => {
+            acc[agent] = sources.map(source => ({ agent, ...source }));
+            return acc;
+        }, {} as AgentSources)}
+        numCols={3}
+        onChange={sensorCallback}
+    />
+</Group>
